@@ -1,0 +1,16 @@
+# Android build outputs
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+
+# Gradle wrapper jar (keep the scripts, skip the binary)
+gradle/wrapper/gradle-wrapper.jar

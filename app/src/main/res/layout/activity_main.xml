@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="48dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RingLight"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Screen overlay ringlight for Android TV"
+            android:textColor="#AAAAAA"
+            android:textSize="18sp"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Permission banner (hidden when permission granted) -->
+        <LinearLayout
+            android:id="@+id/permission_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#3D2A00"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overlay Permission Required"
+                    android:textColor="#FFD27F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RingLight needs permission to draw over other apps."
+                    android:textColor="#CCCCCC"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_grant_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grant Permission"
+                android:textSize="16sp"
+                android:layout_marginStart="24dp" />
+        </LinearLayout>
+
+        <!-- ── Ring Toggle ── -->
+        <TextView style="@style/SectionLabel" android:text="RING" />
+
+        <Button
+            android:id="@+id/btn_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn Ring On"
+            android:textSize="20sp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="40dp"
+            android:nextFocusDown="@id/btn_thickness_minus" />
+
+        <!-- ── Thickness ── -->
+        <TextView style="@style/SectionLabel" android:text="RING THICKNESS" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="40dp">
+
+            <Button
+                android:id="@+id/btn_thickness_minus"
+                style="@style/StepButton"
+                android:text="−"
+                android:nextFocusUp="@id/btn_toggle"
+                android:nextFocusRight="@id/btn_thickness_plus" />
+
+            <TextView
+                android:id="@+id/thickness_value"
+                style="@style/StepValue"
+                android:text="15%" />
+
+            <Button
+                android:id="@+id/btn_thickness_plus"
+                style="@style/StepButton"
+                android:text="+"
+                android:nextFocusLeft="@id/btn_thickness_minus" />
+        </LinearLayout>
+
+        <!-- ── Color ── -->
+        <TextView style="@style/SectionLabel" android:text="RING COLOUR" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp">
+
+            <LinearLayout
+                android:id="@+id/color_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp" />
+        </HorizontalScrollView>
+
+        <!-- ── Intensity ── -->
+        <TextView style="@style/SectionLabel" android:text="INTENSITY" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="40dp">
+
+            <Button
+                android:id="@+id/btn_intensity_minus"
+                style="@style/StepButton"
+                android:text="−"
+                android:nextFocusRight="@id/btn_intensity_plus" />
+
+            <TextView
+                android:id="@+id/intensity_value"
+                style="@style/StepValue"
+                android:text="100%" />
+
+            <Button
+                android:id="@+id/btn_intensity_plus"
+                style="@style/StepButton"
+                android:text="+"
+                android:nextFocusLeft="@id/btn_intensity_minus" />
+        </LinearLayout>
+
+        <!-- ── Auto-off ── -->
+        <TextView style="@style/SectionLabel" android:text="AUTO-OFF" />
+
+        <Switch
+            android:id="@+id/auto_off_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn ring off automatically"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:id="@+id/duration_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turn off after: "
+                android:textColor="#CCCCCC"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_duration_minus"
+                style="@style/StepButton"
+                android:text="−"
+                android:nextFocusRight="@id/btn_duration_plus" />
+
+            <TextView
+                android:id="@+id/duration_value"
+                style="@style/StepValue"
+                android:text="3h" />
+
+            <Button
+                android:id="@+id/btn_duration_plus"
+                style="@style/StepButton"
+                android:text="+"
+                android:nextFocusLeft="@id/btn_duration_minus" />
+        </LinearLayout>
+
+        <!-- ── Button Mapper Setup ── -->
+        <TextView style="@style/SectionLabel" android:text="BUTTON MAPPER SETUP" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In Button Mapper, assign each button action to a Shortcut:\n\n  • Toggle on/off  →  Toggle RingLight\n  • Cycle colour   →  Cycle RingLight Colour\n  • Cycle intensity →  Cycle RingLight Intensity\n\nThese three shortcuts appear under this app in the Shortcuts list.\nNo manual intent entry needed."
+            android:textColor="#AAAAAA"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

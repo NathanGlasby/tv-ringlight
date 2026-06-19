@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RingLight</string>
+
+    <string name="shortcut_toggle_short">Toggle</string>
+    <string name="shortcut_toggle_long">Toggle RingLight</string>
+
+    <string name="shortcut_color_short">Colour</string>
+    <string name="shortcut_color_long">Cycle RingLight Colour</string>
+
+    <string name="shortcut_intensity_short">Intensity</string>
+    <string name="shortcut_intensity_long">Cycle RingLight Intensity</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="toggle_ring"
+        android:enabled="true"
+        android:icon="@drawable/ic_ring"
+        android:shortcutShortLabel="@string/shortcut_toggle_short"
+        android:shortcutLongLabel="@string/shortcut_toggle_long">
+        <intent
+            android:action="com.ringlight.tv.TOGGLE"
+            android:targetPackage="com.ringlight.tv"
+            android:targetClass="com.ringlight.tv.TrampolineActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="cycle_color"
+        android:enabled="true"
+        android:icon="@drawable/ic_color"
+        android:shortcutShortLabel="@string/shortcut_color_short"
+        android:shortcutLongLabel="@string/shortcut_color_long">
+        <intent
+            android:action="com.ringlight.tv.CYCLE_COLOR"
+            android:targetPackage="com.ringlight.tv"
+            android:targetClass="com.ringlight.tv.TrampolineActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="cycle_intensity"
+        android:enabled="true"
+        android:icon="@drawable/ic_intensity"
+        android:shortcutShortLabel="@string/shortcut_intensity_short"
+        android:shortcutLongLabel="@string/shortcut_intensity_long">
+        <intent
+            android:action="com.ringlight.tv.CYCLE_INTENSITY"
+            android:targetPackage="com.ringlight.tv"
+            android:targetClass="com.ringlight.tv.TrampolineActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>
