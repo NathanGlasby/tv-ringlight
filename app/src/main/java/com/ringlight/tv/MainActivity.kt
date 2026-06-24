@@ -7,7 +7,6 @@ import android.graphics.*
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.Icon
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.*
@@ -102,8 +101,7 @@ class MainActivity : AppCompatActivity() {
         updateToggleLabel()
         toggleBtn.setOnClickListener {
             sendServiceAction(RingLightService.ACTION_TOGGLE)
-            // Briefly delay the label update so prefs are written by the service first
-            toggleBtn.postDelayed({ updateToggleLabel() }, 200)
+            toggleBtn.text = if (prefs.isOn) "Turn Ring On" else "Turn Ring Off"
         }
     }
 

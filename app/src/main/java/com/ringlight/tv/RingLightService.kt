@@ -201,6 +201,7 @@ class RingLightService : Service() {
 
     override fun onDestroy() {
         hideRing()
+        handler.removeCallbacksAndMessages(null)
         super.onDestroy()
     }
 }
