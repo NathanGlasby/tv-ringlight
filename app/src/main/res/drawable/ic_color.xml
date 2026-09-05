@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Colour shortcut icon: a filled circle -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <path
-        android:fillColor="#FFD27F"
-        android:pathData="M12,2 A10,10 0 0,1 22,12 A10,10 0 0,1 12,22 A10,10 0 0,1 2,12 A10,10 0 0,1 12,2 Z" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#C8BAFF" android:pathData="M3,3H11V11H3Z"/>
+    <path android:fillColor="#FFD27F" android:pathData="M13,3H21V11H13Z"/>
+    <path android:fillColor="#4DB8FF" android:pathData="M3,13H11V21H3Z"/>
+    <path android:fillColor="#FF4DC8" android:pathData="M13,13H21V21H13Z"/>
 </vector>

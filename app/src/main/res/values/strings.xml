@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RingLight</string>
-
+    <string name="app_tagline">Light around your screen.</string>
+    <string name="preview_screen">Your screen</string>
+    <string name="preview_caption">The preview stays visible while the light is off.</string>
+    <string name="settings_title">Make it yours</string>
+    <string name="settings_subtitle">Use your remote to adjust the light.</string>
+    <string name="colour_label">Colour</string>
+    <string name="width_label">Width</string>
+    <string name="brightness_label">Brightness</string>
+    <string name="timer_label">Sleep timer</string>
+    <string name="permission_title">Allow light over other apps</string>
+    <string name="permission_body">Give RingLight display permission to turn on the light.</string>
+    <string name="permission_button">Open settings</string>
+    <string name="permission_needed">Permission needed</string>
+    <string name="permission_manual_help">On your TV, open Settings, then Apps, Special app access, Display over other apps. Allow RingLight, then return here.</string>
+    <string name="permission_shortcut_help">Allow RingLight to display over other apps, then try your remote button again.</string>
+    <string name="light_is_on">Light is on</string>
+    <string name="light_is_off">Light is off</string>
+    <string name="turn_light_on">Turn light on</string>
+    <string name="turn_light_off">Turn light off</string>
+    <string name="light_start_failed">The light did not respond. Check display permission and try again.</string>
+    <string name="turning_on">Turning on…</string>
+    <string name="turning_off">Turning off…</string>
+    <string name="preview_summary">%1$s · %2$s brightness</string>
+    <string name="preview_description">Light preview: %1$s, %2$s brightness, %3$d%% width</string>
+    <string name="color_selected">%1$s, selected</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_hours">%1$d hr</string>
+    <string name="duration_hours_minutes">%1$d hr %2$d min</string>
+    <string name="timer_disabled">Stays on until you switch it off.</string>
+    <string name="timer_waiting">Starts when you turn on the light.</string>
+    <string name="timer_starting">Starting timer…</string>
+    <string name="timer_finishing">Turning off…</string>
+    <string name="timer_remaining">Turns off in %1$s</string>
+    <string name="shortcuts_title">Set up your remote</string>
+    <string name="remote_button">Remote setup</string>
+    <string name="shortcuts_help">In Button Mapper, choose a button and enable Customize. Choose the press action, then Shortcuts, then RingLight actions. Pick Toggle RingLight, Cycle colour, Cycle brightness or Turn off RingLight.\n\nReplace any old RingLight assignment with a new one. Test actions below checks the same command entry point inside RingLight.</string>
+    <string name="shortcuts_no_command">No shortcut command received yet.</string>
+    <string name="shortcuts_last_command">Last received: %1$s · %2$s</string>
+    <string name="shortcuts_diagnostic_help">After pressing your mapped button, return here. A new received time means the command reached RingLight. If it did not change, check the mapping and Button Mapper’s accessibility access.</string>
+    <string name="shortcut_picker_title">RingLight actions</string>
+    <string name="test_actions">Test actions</string>
     <string name="shortcut_toggle_short">Toggle</string>
     <string name="shortcut_toggle_long">Toggle RingLight</string>
-
     <string name="shortcut_color_short">Colour</string>
-    <string name="shortcut_color_long">Cycle RingLight Colour</string>
-
-    <string name="shortcut_intensity_short">Intensity</string>
-    <string name="shortcut_intensity_long">Cycle RingLight Intensity</string>
+    <string name="shortcut_color_long">Cycle colour</string>
+    <string name="shortcut_intensity_short">Brightness</string>
+    <string name="shortcut_intensity_long">Cycle brightness</string>
+    <string name="shortcut_off_short">Turn off</string>
+    <string name="shortcut_off_long">Turn off RingLight</string>
+    <string name="reset_button">Restore defaults</string>
+    <string name="reset_title">Restore light settings?</string>
+    <string name="reset_message">Use white at full brightness, 15% width and a three-hour sleep timer. The light will keep its current on or off state.</string>
+    <string name="reset_confirm">Restore</string>
+    <string name="settings_reset">Default light settings restored.</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="decrease_width">Decrease light width</string>
+    <string name="increase_width">Increase light width</string>
+    <string name="decrease_brightness">Decrease brightness</string>
+    <string name="increase_brightness">Increase brightness</string>
+    <string name="decrease_duration">Shorten sleep timer</string>
+    <string name="increase_duration">Lengthen sleep timer</string>
+    <string name="minus">−</string>
+    <string name="plus">+</string>
+    <string name="nav_hint">D-pad to adjust · Back to return to your show</string>
+    <plurals name="timer_seconds_remaining">
+        <item quantity="one">Turns off in %1$d second</item>
+        <item quantity="other">Turns off in %1$d seconds</item>
+    </plurals>
 </resources>
