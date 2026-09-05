@@ -11,13 +11,15 @@
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:supportsRtl="false"
         android:banner="@drawable/tv_banner"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.RingLight">
 
-        <!-- Settings screen — appears on TV launcher -->
+        <!-- Main editor appears on TV and standard launchers. -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,13 +30,24 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- Exposes the 3 shortcuts to Button Mapper -->
+            <!-- Launcher shortcuts supplement the mapper-compatible chooser below. -->
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
 
-        <!-- Transparent trampoline — receives shortcuts, fires service commands -->
+        <activity
+            android:name=".ShortcutActivity"
+            android:exported="true"
+            android:label="@string/shortcut_picker_title"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Resumed activity receives commands from external button mappers. -->
         <activity
             android:name=".TrampolineActivity"
             android:exported="true"
@@ -50,12 +63,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
+                <action android:name="com.ringlight.tv.TURN_OFF" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="com.ringlight.tv.CYCLE_INTENSITY" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <!-- Always-running overlay service -->
+        <!-- Runs only while the overlay is on. -->
         <service
             android:name=".RingLightService"
             android:exported="false"
@@ -65,7 +82,7 @@
                 android:value="Screen overlay for ringlight effect" />
         </service>
 
-        <!-- Starts service on device boot -->
+        <!-- Restores an active, unexpired light after boot. -->
         <receiver
             android:name=".BootReceiver"
             android:exported="true">

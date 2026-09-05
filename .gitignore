@@ -11,6 +11,3 @@ captures/
 *.apk
 *.aab
 *.ap_
-
-# Gradle wrapper jar (keep the scripts, skip the binary)
-gradle/wrapper/gradle-wrapper.jar

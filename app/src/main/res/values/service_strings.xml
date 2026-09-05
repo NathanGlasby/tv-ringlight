@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_channel_name">RingLight</string>
+    <string name="notification_channel_description">Shows when the ring light is active</string>
+    <string name="notification_title">RingLight is on</string>
+    <string name="notification_appearance">%1$s · %2$s intensity</string>
+    <string name="notification_turn_off">Turn off</string>
+    <string name="shortcut_start_failed">Could not start the light. Open RingLight and try again.</string>
+</resources>
