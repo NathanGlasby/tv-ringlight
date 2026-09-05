@@ -35,7 +35,11 @@ jobs:
           cache-read-only: ${{ github.event_name == 'pull_request' }}
 
       - name: Install Android SDK packages
-        run: sdkmanager 'platforms;android-34' 'build-tools;34.0.0'
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
+        with:
+          cmdline-tools-version: '12266719'
+          packages: 'platforms;android-34 build-tools;34.0.0'
+          log-accepted-android-sdk-licenses: false
 
       - name: Run regression tests, Android lint, and APK build
         run: ./gradlew --no-daemon testDebugUnitTest lintDebug assembleDebug
